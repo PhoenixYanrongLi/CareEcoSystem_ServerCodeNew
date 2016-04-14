@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+  <Button
+        android:id="@+id/start_wearable_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Start Wearable Activity"/>
+
+  <Button
+      android:id="@+id/data_management_button"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/start_wearable_button"
+      android:text="View Watch Data"/>
+
+  <Button
+      android:id="@+id/notify_demo_button"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/data_management_button"
+      android:text="Notify Demo"/>
+
+    <Button
+        android:id="@+id/ground_trust_demo_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/notify_demo_button"
+        android:text="Ground Trust Acquisition"/>
+
+    <Button
+        android:id="@+id/reset_dropbox_connection_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Reset Dropbox Connection" />
+
+</RelativeLayout>

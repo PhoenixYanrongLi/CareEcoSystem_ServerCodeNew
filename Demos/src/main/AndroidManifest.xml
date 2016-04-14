@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ucsf.demo" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="18" />
+
+    <!-- Needed permissions in order to scan for beacons. -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- Needed permission in order to read the TelephonyManager properties. -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- Needed permission in order to access Dropbox account. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Needed permission in order to execute a service each day. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
+    <!-- Needed permission in order to get GPS coordinates. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Declaration that this app is usable on phones with Bluetooth Low Energy. -->
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <!-- Declaration that this app is usable on phones with a step counter service. -->
+    <uses-feature android:name="android.hardware.sensor.stepcounter" android:required="true"/>
+
+    <android:uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <application
+        android:label="Estimote Demos"
+        android:theme="@android:style/Theme.Holo.Light" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".AllDemosActivity"
+            android:label="Estimote Demos"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ListBeaconsActivity"
+            android:label="Select Beacon"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DataManagementActivity"
+            android:label="Data Management"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NotifyDemoActivity"
+            android:label="Notify Demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CharacteristicsDemoActivity"
+            android:label="Characteristics Demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GroundTrustActivity"
+            android:label="Acquire Ground Trust" />
+
+        <!-- Dropbox service of authentication. -->
+        <activity
+            android:name="com.dropbox.client2.android.AuthActivity"
+            android:configChanges="orientation|keyboard"
+            android:launchMode="singleTask" >
+            <intent-filter>
+
+                <!-- Change this to be db- followed by your app key -->
+                <data android:scheme="db-3n2f8nwmd3fz2vk" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Estimote service responsible for scanning beacons. -->
+        <service
+            android:name="com.estimote.sdk.service.BeaconService"
+            android:exported="false" />
+
+        <!-- ListenerService responsible for receiving data from watch -->
+        <service android:name=".DataLayerListenerService" >
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".DropboxService"
+            android:enabled="true"
+            android:exported="true" >
+        </receiver>
+
+        <receiver
+            android:name=".GPSLocationService"
+            android:enabled="true"
+            android:exported="true" >
+        </receiver>
+
+        <receiver
+            android:name=".LifeSpaceService"
+            android:enabled="true"
+            android:exported="true" >
+        </receiver>
+    </application>
+
+</manifest>

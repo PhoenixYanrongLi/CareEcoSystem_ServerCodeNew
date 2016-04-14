@@ -1,0 +1,11 @@
+# Untracked folders for this branch
+*.pyc
+.idea/**
+WearTest/**
+OfflineAnalysis/DataFiles/
+OfflineAnalysis/RoomDataFiles
+george.netscher1444594894000_trainingdata.p
+
+Demos/.idea/
+.idea/
+.DS_Store

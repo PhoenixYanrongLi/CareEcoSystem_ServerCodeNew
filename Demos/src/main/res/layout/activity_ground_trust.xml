@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.estimote.examples.demos.GroundTrustActivity"
+    android:padding="8dp">
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/tableLayout"
+        android:layout_below="@+id/editButton">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:text="@string/room_default_name"
+                android:id="@+id/room_button0"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="@string/room_default_name"
+                android:id="@+id/room_button1"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:visibility="visible" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:text="@string/room_default_name"
+                android:id="@+id/room_button2"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="@string/room_default_name"
+                android:id="@+id/room_button3"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:text="@string/room_default_name"
+                android:id="@+id/room_button4"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="@string/room_default_name"
+                android:id="@+id/room_button5"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"/>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/action_edit_ground_trust"
+        android:id="@+id/editButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/action_edit_validate"
+        android:id="@+id/validateButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:visibility="invisible" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/action_edit_cancel"
+        android:id="@+id/cancelButton"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/validateButton"
+        android:visibility="invisible" />
+
+</RelativeLayout>

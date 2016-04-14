@@ -1,0 +1,15 @@
+##### Gradle files #####
+.gradle/**
+gradlew
+gradle/**
+
+##### System files #####
+.DS_Store
+
+##### IDE files #####
+.idea/**
+local.properties
+
+##### Build files #####
+build/**
+Demos.iml

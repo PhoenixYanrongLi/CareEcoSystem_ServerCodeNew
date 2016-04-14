@@ -1,0 +1,11 @@
+<resources>
+    <string name="action_edit_ground_trust">Edit</string>
+    <string name="action_edit_validate">Ok</string>
+    <string name="action_edit_cancel">Cancel</string>
+
+    <string name="patient_default_name">Patient\'s Name</string>
+    <string name="room_default_name">Room</string>
+    <string name="edit_room_name_message">Enter a room name</string>
+
+    <string name="push_to_dropbox">Push to Dropbox</string>
+</resources>
